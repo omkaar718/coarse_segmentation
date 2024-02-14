@@ -1,4 +1,4 @@
-# Coarse segmentation
+# Coarse segmentation for face ID offloading
 
 ### Step 1: Create dataset
 Download the zip files from [WIDER Face dataset](http://shuoyang1213.me/WIDERFACE/).
