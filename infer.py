@@ -50,16 +50,14 @@ class CustomResizeWithPad():
         return resized_image
 
 
-def main():
+def main(image_path, model_weights_path):
     # Instantiate the model
     model = MobileNetV3WithConv().to(DEVICE)
 
     # Load model weights
-    model_weights_path = 'segmentation_model_epoch_11.pth'
     model.load_state_dict(torch.load(model_weights_path, map_location=DEVICE))
 
     # Load image
-    image_path = 'orig_images/1_Handshaking_Handshaking_1_165.png'
     input_img = Image.open(image_path)
 
     # image transformation
@@ -78,4 +76,6 @@ def main():
 
 
 if __name__ == '__main__':
-    main()
+    image_path = 'orig_images/1_Handshaking_Handshaking_1_165.png'
+    model_weights_path = 'segmentation_model_epoch_11.pth'
+    main(image_path = image_path, model_weights_path = model_weights_path)
